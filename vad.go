@@ -29,7 +29,7 @@ func New() (*VAD, error) {
 	return vad, nil
 }
 
-func free(vad *VAD) {
+func Free(vad *VAD) {
 	C.WebRtcVad_Free(vad.inst)
 }
 
