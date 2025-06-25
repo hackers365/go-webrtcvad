@@ -30,6 +30,10 @@ func New() (*VAD, error) {
 }
 
 func Free(vad *VAD) {
+	free(vad)
+}
+
+func free(vad *VAD) {
 	C.WebRtcVad_Free(vad.inst)
 }
 
