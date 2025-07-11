@@ -30,6 +30,7 @@ func New() (*VAD, error) {
 }
 
 func Free(vad *VAD) {
+	runtime.SetFinalizer(vad, nil)
 	free(vad)
 }
 
